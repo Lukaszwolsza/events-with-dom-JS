@@ -128,3 +128,14 @@ h3{
     text-indent: 2%;
     font-weight:bold;
 }
+#circle{
+    height: 45px;
+  width: 45px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.highlight{
+    background-color: tomato;
+    transition: 2s;
+}

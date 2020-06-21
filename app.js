@@ -83,7 +83,8 @@ liItems.forEach(el => {
 
 const addingNewItemToListHandler = () =>{
     backdrop(NEW_ITEM_MODAL);
-    creatingNewItem(userInputItemHeader(), userInputItemDesc());  
+    creatingNewItem(userInputItemHeader(), userInputItemDesc());
+      
 };
 
 const creatingNewItem = (title, desc) =>{
@@ -98,6 +99,11 @@ const creatingNewItem = (title, desc) =>{
     console.log("added item");
     backdrop(this.NEW_ITEM_MODAL);
     clearingInputs(); 
+    li.scrollIntoView({behavior: "smooth"});
+    li.className = 'highlight';
+    setTimeout( ()=>{
+        li.className = '';
+    },1000);
 };
 
 

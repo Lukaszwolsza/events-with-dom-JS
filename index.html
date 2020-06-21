@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src = "app.js" defer></script>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+    </head>
+    <body>
+        <div class ="modal-bg">
+            <div id ="alertRemover" class = "remover-alert">
+                <h3>Do you want to remove it ?</h3>
+                <button id="confirmRemoveButton">Yes</button>
+                <button id="cancelRemovingItem">Nope</button>
+            </div>
+        </div>
+        
+        <div id = "header">
+            <h3>Item of list </h3>
+        </div>
+
+        <div class ="modalbg-new-item">
+            <div id = "newItemList">
+                <h3>Add new item to list</h3>
+                <label>Item header :</label>
+                <input id = "itemHeader" type = "text"><br>
+                <label>Item descritption :</label>
+                <input type = "text" id = "itemDesc"><br>
+                <button class = "new-item-btn-style" id="addNewItemButton">Yes</button>
+                <button class = "new-item-btn-style" id="cancelAddingNewItem">Nope</button>
+            </div>
+        </div>
+
+        <div id = "divone">
+            <button id = "addingNewItem">Add new list item</button>
+            <button id = "addingNewItem">Edit items</button>
+        </div>  
+        <ul>
+            <li>
+                <h3>Item 1</h3>
+                <p>Siemanko</p>
+            </li>
+            <li >
+                <h3>Item 2</h3>
+                <p>Siemanko</p>
+            </li>
+            <li>
+                <h3>Item 3</h3>
+                <p>Siemanko</p>
+            </li>
+        </ul>
+    </body>
+</html>

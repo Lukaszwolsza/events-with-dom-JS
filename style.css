@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+}
+#divone{
+    width:90%;
+    margin: 2% auto;
+}
+ul{
+    
+    width:90%;
+    margin: 2% auto;
+}
+li{
+    border:1px solid black;
+    height:8rem;
+    list-style: none;
+    margin:1%;
+    padding:0.3%;
+}
+
+.highlight{
+    background-color: red;
+}
+.remover-alert{
+    width:80%;
+    margin:1% auto;
+    text-align: center;
+    border:1px solid black;
+    border-radius: 25px;
+    padding:1%;
+    position: absolute;
+    background-color: white;
+}
+.modal-bg{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.modal-bg.visible{
+    visibility: visible;
+}
+
+.modalbg-new-item{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.modalbg-new-item.visible{
+    visibility: visible;
+}
+#newItemList{
+    border:1px solid black;
+    border-radius: 25px;
+    background-color: white;
+    width:70%;
+    text-align: center;
+}
+label,input {
+    display: inline-block;
+    width: 150px;
+    margin:1% auto; 
+    font-size: 1.5rem; 
+}
+label{
+    text-align: center;
+    width: 15%;
+    
+}
+br{
+    clear:left;
+}
+#header{
+    width:100%;
+    margin:0 auto;
+    background-color: tomato;
+    padding:1% 0;
+    color:white;
+    text-align: center;
+}
+#addingNewItem{
+    border:none;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    padding:1%;
+    margin:1%;
+    font-size: x-large;
+    background-color: white;
+    width:15%;
+    
+}
+#addingNewItem:hover{
+    background-color: white;
+    background-color: tomato;
+    color:white;
+    transition: 0.5s;
+}
+.new-item-btn-style{
+    width:10%;
+    margin:1%;
+    border-radius: 25px;
+}
+p{
+    font-size: x-large;
+}

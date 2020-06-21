@@ -5,11 +5,31 @@
 //         event.target.classList.toggle('highlight');
 //     })
 // })
-	
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date + ' ' + time;
+const date = () =>{
+    const today = new Date();
+    const year = today.getFullYear();
+    
+    let month = today.getMonth()+1;
+    month < 10 ? month = '0' + month : month = month;
+    
+    let day = today.getDate();
+    day < 10 ? day = '0' + day : day = day;
+    
+    let hours = today.getHours();
+    hours < 10 ? hours = '0' + hours : hours = hours;
+    
+    let minutes = today.getMinutes()
+    minutes < 10 ? minutes = '0' + minutes : minutes = minutes;
+    
+    let seconds = today.getSeconds();
+    seconds < 10 ? seconds = '0' + seconds : seconds = seconds;
+    
+    const date = year + '-' + month + '-' + day;
+    const time = hours + ":" + minutes + ":" + seconds;
+    const dateTime = date + ' ' + time;
+    return dateTime;
+};	
+
 
 const liItems = document.querySelectorAll('li');
 const ulItems = document.querySelector('ul');
@@ -70,7 +90,7 @@ const creatingNewItem = (title, desc) =>{
     let li = document.createElement('li');
     let h3 = document.createElement('h3');
     let p = document.createElement('p');
-    h3.innerText = '> ' + title + '  | added : ' + dateTime;
+    h3.innerText = '> ' + title + ' | added : ' + date();
     p.innerText = desc;
     li.appendChild(h3);
     li.appendChild(p);

@@ -44,13 +44,15 @@ const cancelAddingNewItemBtn = document.querySelector('#cancelAddingNewItem');
 const BG_MODAL = '.modal-bg';
 const NEW_ITEM_MODAL = '.modalbg-new-item';
 
+const removeItemBinIconBtn = document.querySelectorAll('#removeItemIcon');
+
+
 const userInputItemHeader = () =>{
     return document.querySelector('#itemHeader').value;
 };
 const userInputItemDesc = () =>{
     return document.querySelector('#itemDesc').value;
 };
-
 
 const clearingInputs = () =>{
     document.querySelector('#itemHeader').value = '';
@@ -73,36 +75,47 @@ const backdrop = divName =>{
 //     bgDrop.classList.toggle('visible');   
 // };
 
-liItems.forEach(el => {  
-    el.addEventListener('click', event =>{
-        backdrop(BG_MODAL); 
-        //event.target.closest('li').remove();   
-    });
-    
+removeItemBinIconBtn.forEach(el => {  
+    el.addEventListener('click', event =>{ 
+        event.target.closest('li').remove();    
+        console.log('removed Item');
+    });  
 });
 
 const addingNewItemToListHandler = () =>{
     backdrop(NEW_ITEM_MODAL);
-    creatingNewItem(userInputItemHeader(), userInputItemDesc());
-      
+    creatingNewItem(userInputItemHeader(), userInputItemDesc());  
 };
 
 const creatingNewItem = (title, desc) =>{
     let li = document.createElement('li');
     let h3 = document.createElement('h3');
     let p = document.createElement('p');
-    h3.innerText = '> ' + title + ' | added : ' + date();
+
+    let img = document.createElement('img');
+    img.setAttribute('id', 'removeItemIcon');
+    img.setAttribute('class', 'bin-icon');
+    img.setAttribute('src', 'bin.png');
+
+    h3.innerText = ' > ' + title + ' | added : ' + date();
+
     p.innerText = desc;
+    p.appendChild(img);
+
     li.appendChild(h3);
     li.appendChild(p);
     ulItems.appendChild(li);
+
     console.log("added item");
+
     backdrop(this.NEW_ITEM_MODAL);
     clearingInputs(); 
+
     li.scrollIntoView({behavior: "smooth"});
     li.className = 'highlight';
+
     setTimeout( ()=>{
-        li.className = '';
+        li.classList.remove('highlight');
     },1000);
 };
 
@@ -112,8 +125,6 @@ addingNewItemModalBtn.addEventListener('click', backdrop.bind(this, NEW_ITEM_MOD
 cancelAddingNewItemBtn.addEventListener('click', backdrop.bind(this, NEW_ITEM_MODAL));
 cancelAddingNewItemBtn.addEventListener('click', clearingInputs);
 cancelRemovingBtn.addEventListener('click', backdrop.bind(this, BG_MODAL));
-
-
 
 
 

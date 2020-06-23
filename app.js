@@ -45,7 +45,7 @@ const BG_MODAL = '.modal-bg';
 const NEW_ITEM_MODAL = '.modalbg-new-item';
 
 const removeItemBinIconBtn = document.querySelectorAll('#removeItemIcon');
-
+let elementsAddedDynamic;
 
 const userInputItemHeader = () =>{
     return document.querySelector('#itemHeader').value;
@@ -75,17 +75,14 @@ const backdrop = divName =>{
 //     bgDrop.classList.toggle('visible');   
 // };
 
-removeItemBinIconBtn.forEach(el => {  
-    el.addEventListener('click', event =>{ 
-        event.target.closest('li').remove();    
-        console.log('removed Item');
-    });  
-});
-
 const addingNewItemToListHandler = () =>{
     backdrop(NEW_ITEM_MODAL);
     creatingNewItem(userInputItemHeader(), userInputItemDesc());  
 };
+
+const gettingElementsAddedDynamic = () =>{
+    return document.querySelectorAll('#newItemAddedDynam');
+}
 
 const creatingNewItem = (title, desc) =>{
     let li = document.createElement('li');
@@ -93,7 +90,8 @@ const creatingNewItem = (title, desc) =>{
     let p = document.createElement('p');
 
     let img = document.createElement('img');
-    img.setAttribute('id', 'removeItemIcon');
+    //img.setAttribute('id', 'removeItemIcon');
+    img.setAttribute('id', 'newItemAddedDynam');
     img.setAttribute('class', 'bin-icon');
     img.setAttribute('src', 'bin.png');
 
@@ -116,8 +114,36 @@ const creatingNewItem = (title, desc) =>{
 
     setTimeout( ()=>{
         li.classList.remove('highlight');
-    },1000);
+    },1000); 
+
+    elementsAddedDynamic = gettingElementsAddedDynamic();
+    elementsAddedDynamic.forEach(el => {
+        el.addEventListener('click', event =>{
+            event.target.closest('li').remove();
+        });
+    });
 };
+
+// elements.foreach(el => {
+//     el.addEventListener('click', event =>{
+//         event.target.closest('li').remove();
+//         console.log('removed Item');
+//     });
+// }); 
+
+// elementsAddedDynamic.foreach(el => {
+//     el.addEventListener('click', event =>{
+//         event.target.closest('li').remove();
+//         console.log('removed Item');
+//     });
+// });  
+
+removeItemBinIconBtn.forEach(el => {  
+    el.addEventListener('click', event =>{ 
+        event.target.closest('li').remove();    
+        console.log('removed Item');
+    });  
+});
 
 
 addingNewItemToListBtn.addEventListener('click', addingNewItemToListHandler);

@@ -23,7 +23,12 @@ li{
     padding:0.3%;
     transition: 1s;
 }
-
+li:hover{
+    -webkit-box-shadow: 1px 3px 16px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 16px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 16px 5px rgba(0,0,0,0.75);
+    transition: 1s;
+}
 .highlight{
     background-color: red;
 }
@@ -113,6 +118,7 @@ br{
     background-color: tomato;
     color:white;
     transition: 0.5s;
+    cursor: pointer;
 }
 .new-item-btn-style{
     width:10%;

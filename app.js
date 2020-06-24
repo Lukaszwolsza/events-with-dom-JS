@@ -112,7 +112,7 @@ const creatingNewItem = (title, desc) =>{
     li.scrollIntoView({behavior: "smooth"});
     li.className = 'highlight';
 
-    setTimeout( ()=>{
+    setTimeout(()=>{ 
         li.classList.remove('highlight');
     },1000); 
 

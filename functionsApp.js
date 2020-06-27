@@ -9,6 +9,7 @@
 // const calculateIncomeTaxAmount = createTaxCalc(0.19);
 
 // console.log(calculateVatAmount(200));
+const headerDivHomeBtn = document.getElementById('#header');
 
 const randomNumberDisplayed = document.querySelector('#randNum');
 const randomTheNumberBtn = document.querySelector('#randomTheNumberBtn');

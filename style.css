@@ -97,7 +97,7 @@ br{
 #header{
     width:100%;
     margin:0 auto;
-    background-color: tomato;
+    background-color: #2980b9;
     padding:1% 0;
     color:white;
     text-align: center;
@@ -155,4 +155,28 @@ h3{
     background-color: tomato;
     transition: 1s;
     cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.dropboxImage{
+    border:1px solid black;
+    width:200px;
+    height:200px;
+    margin:1%;
+    display: inline-block;
+}
+#allDropboxes, #randomImages{
+    text-align: center;
+}
+.randomizeImg{
+    width:200px;
+    height:200px;
+    border:1px solid black;
+    margin:1%;
+    display: inline-block;
+}
+.boxTitles{
+    display: inline-block;
+    margin:0.5%;
 }

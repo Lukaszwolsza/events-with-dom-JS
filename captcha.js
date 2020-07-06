@@ -32,6 +32,7 @@ for(let i = 0; i < 3; i++){
     img[i] = document.createElement('img');
     img[i].setAttribute('src', 'img/'+rndNum+'.png');
     img[i].setAttribute('class', 'randomizeImg');
+    img[i].setAttribute('draggable', 'true');
 
     imageTitle[i].textContent = titleNum;
 
@@ -40,10 +41,17 @@ for(let i = 0; i < 3; i++){
 
 const imgs = document.querySelectorAll('.randomizeImg');
 
+const dragStart = () =>{
+    console.log('starting move el');
+};
+
+const dragEnd = () =>{
+    console.log('end move el');
+};
+
 imgs.forEach(el =>{
-    el.addEventListener('dragenter', event => {
-        event.target.style.backgroundColor = 'red';
-    })
+    el.addEventListener('dragstart', dragStart);
+    el.addEventListener('dragend', dragEnd);
 });
 
 

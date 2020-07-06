@@ -35,3 +35,26 @@ const showRandomizeNumber = () => {
 };
 
 randomTheNumberBtn.addEventListener('click', showRandomizeNumber);
+
+const creatingInfoAboutCords = (latitude, longitude) =>{
+    const div = document.createElement('div');
+    const h3 = document.createElement('h3');
+    h3.innerHTML = `Your cords is : ${latitude} and ${longitude}`;
+    div.appendChild(h3);
+    resultOfRandom.appendChild(div);
+};
+
+
+
+const getUserPosition = () =>{
+    navigator.geolocation.getCurrentPosition(
+        geoData =>{
+            creatingInfoAboutCords(geoData.coords.latitude, geoData.coords.longitude);
+        },
+        error =>{
+            console.log(error);
+        },
+    );
+};
+
+getUserPosition();

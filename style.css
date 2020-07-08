@@ -180,3 +180,16 @@ a{
     display: inline-block;
     margin:0.5%;
 }
+#new-post-item{
+    width:80%;
+    border:1px solid black;
+    margin:1% auto;
+}
+.approving-button{
+    margin:1% auto;
+    text-align: center;
+    padding:1%;
+}
+#fetchbtn{
+    text-align: center;
+}

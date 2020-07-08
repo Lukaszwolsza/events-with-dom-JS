@@ -168,3 +168,25 @@ cancelRemovingBtn.addEventListener('click', backdrop.bind(this, BG_MODAL));
 // cancelingButton.addEventListener('click', () =>{
 //     makeBackDrop();
 // });
+
+
+
+// HTTP REQUEST 
+
+
+
+// const xhr = new XMLHttpRequest();
+// //xhr.responseType = 'json';
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+
+// xhr.onload = function (){
+//     const listOfItem = JSON.parse(xhr.response);
+//     for(const item of listOfItem){
+//         const listElement = document.importNode(postingTemp.content,true);
+//         listElement.querySelector('h3').textContent = item.title.toUpperCase(); 
+//         listElement.querySelector('p').innerText = item.body.toUpperCase();
+//         postItem.append(item);
+//     }
+// };
+
+// xhr.send();

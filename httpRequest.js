@@ -46,4 +46,6 @@ postForm.addEventListener('submit', event =>{
     const postTitle = event.currentTarget.querySelector('#itemTitle').value;
     const postBody = event.currentTarget.querySelector('#itemDesc').value;
     createPost(postTitle, postBody);
+    event.currentTarget.querySelector('#itemTitle').value = '';
+    event.currentTarget.querySelector('#itemDesc').value = '';
 });
